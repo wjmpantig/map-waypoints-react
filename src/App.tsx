@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { FormEvent, useEffect, useRef, useState } from 'react';
 
-import './App.css';
+import './App.scss';
+import InputField from './components/InputField';
 import { loadMap } from './util/map';
 
 const initialSettings: google.maps.MapOptions = {
@@ -25,8 +26,19 @@ const App = () => {
   useEffect(() => {
     initMap();
   }, [])
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }
   return (
-    <div className="App">
+    <div className="app">
+      <div className="sidebar">
+        <form onSubmit={onSubmit}>
+          <InputField type="text" placeholder="Starting location" label="Starting location" />
+          <InputField type="text" placeholder="Drop-Off Point" label="Drop-Off Point" />
+          <div className="button-container">
+          </div>
+        </form>
+      </div>
       <div className="map" ref={mapRef} />
     </div>
   );

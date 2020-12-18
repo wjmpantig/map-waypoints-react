@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+
+.input-field {
+  margin-bottom: 0.5rem;
+  label {
+    display: block;
+    color: $pink;
+    margin-bottom: 0.25rem;
+  }
+  input {
+    width: 100%;
+    font-size: 1rem;
+    color: $secondary;
+    background: transparent;
+    border-style: solid;
+    border-color: currentColor;
+    padding: 0.5rem 0.25rem;
+    &:active, &:focus {
+      color: $pink;
+      outline: none;
+    }
+    
+  }
+}
+
