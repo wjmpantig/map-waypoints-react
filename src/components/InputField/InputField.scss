@@ -1,25 +1,29 @@
+@import '../../styles/variables';
 @import '../../styles/colors';
 
 .input-field {
   margin-bottom: 0.5rem;
   label {
     display: block;
-    color: $pink;
+    color: $gray500;
     margin-bottom: 0.25rem;
   }
   input {
     width: 100%;
     font-size: 1rem;
-    color: $secondary;
+    color: $gray500;
     background: transparent;
     border-style: solid;
     border-color: currentColor;
     padding: 0.5rem 0.25rem;
+    transition: $default-transition;
+    outline: none;
     &:active, &:focus {
-      color: $pink;
-      outline: none;
+      color: $gray100;
     }
-    
+    &:hover {
+      color: $gray300;
+    }
   }
 }
 

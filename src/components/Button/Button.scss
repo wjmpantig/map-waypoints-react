@@ -1,0 +1,14 @@
+@import '../../styles/colors';
+
+button {
+  background: $gray700;
+  border: none;
+  color: $gray100;
+  appearance: none;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  &:hover {
+    background: $gray500;
+  }
+}

@@ -1,14 +1,10 @@
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
 
 import './App.scss';
+import Button from './components/Button/';
 import InputField from './components/InputField';
+import { defaultMapSetttings } from './constants';
 import { loadMap } from './util/map';
-
-const initialSettings: google.maps.MapOptions = {
-  zoom: 4,
-  center:  { lat: -25.344, lng: 131.036 },
-  disableDefaultUI: true,
-}
 
 const App = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -19,7 +15,7 @@ const App = () => {
     }
     try {
       await loadMap();
-      setMap(new google.maps.Map(mapRef.current, initialSettings));
+      setMap(new google.maps.Map(mapRef.current, defaultMapSetttings));
     } catch {
     }
   }
@@ -36,6 +32,8 @@ const App = () => {
           <InputField type="text" placeholder="Starting location" label="Starting location" />
           <InputField type="text" placeholder="Drop-Off Point" label="Drop-Off Point" />
           <div className="button-container">
+            <Button type="submit">Submit</Button>
+            <Button type="reset">Reset</Button>
           </div>
         </form>
       </div>
